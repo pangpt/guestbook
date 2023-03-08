@@ -15,19 +15,19 @@
 
                             <!-- Pretitle -->
                             <h6 class="header-pretitle">
-                                Register
+                                {{$section}}
                             </h6>
 
                             <!-- Title -->
                             <h1 class="header-title">
-                                Buku tamu
+                                {{$title}}
                             </h1>
 
                             </div>
                             <div class="col-auto">
 
                                 <!-- Button -->
-                            <a href="#" data-toggle="modal" id="add-data" data-url="#" data-target="#datamodal" class="btn btn-primary lift">
+                            <a href="#" data-toggle="modal" id="add-data" data-url="{{ route('guest.store') }}" data-target="#datamodal" class="btn btn-primary lift">
                                     New Data
                                 </a>
 
@@ -50,7 +50,7 @@
                 </div> <!-- / .header -->
 
                 <!-- Card -->
-                {{-- @if ($errors->any())
+                @if ($errors->any())
                     <div class="alert {{ $errors->has('success') ? 'alert-primary' : 'bg-danger alert-danger'}} fade show alert-dismissible" role="alert">
                         @foreach ($errors->all() as $error)
                         <strong>{{ $error }}</strong>
@@ -59,7 +59,7 @@
                         <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                @endif --}}
+                @endif
 
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-5 ">
@@ -72,9 +72,9 @@
                                 <div class="col-5">
                                     <select class="form-control type" name="categories_id" id="filter_categories" data-toggle="select">
                                         <option selected='selected' value="0">General</option>
-                                        {{-- @foreach ($categories as $cat)
+                                        @foreach ($categories as $cat)
                                             <option value="{{$cat->id}}" {{ @Request::get('categories_id') == $cat->id ? 'selected' : '' }}>{{$cat->name}}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -160,6 +160,7 @@
                         </tr>
                         </thead>
                         <tbody class="list">
+                            @foreach ($guest as $item)
                             <tr >
                                 <td style="vertical-align:middle">
                                         <div class="custom-control custom-checkbox table-checkbox">
@@ -173,19 +174,19 @@
                                     
                                 </td>
                                 <td class="table-product text-left" style="vertical-align:middle">
-                                    asdsd
-                                </td>
-                                <td class="table-category" style="vertical-align:middle">
-                                    asdsdsd
-                                </td>
-                                <td class="table-point" style="vertical-align:middle">
-                                    asdsdsd
-                                </td>
-                                <td class="table-baseprice" style="vertical-align:middle">
-                                    IDR 10000
+                                    {{ $item->tanggal_kunjungan }}
                                 </td>
                                 <td class="table-finnalprice" style="vertical-align:middle">
-                                    IDR 10000
+                                    {{ $item->nama }}
+                                </td>
+                                <td class="table-point" style="vertical-align:middle">
+                                    {{ $item->instansi }}
+                                </td>
+                                <td class="table-baseprice" style="vertical-align:middle">
+                                    {{ $item->tujuan_kunjungan }}
+                                </td>
+                                <td class="table-category" style="vertical-align:middle">
+                                    {{ $item->category->name }}
                                 </td>
                                 <td class="text-right" style="vertical-align:middle">
                                         <div class="dropdown">
@@ -203,7 +204,7 @@
                                         </div>
                                 </td>
                             </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -223,7 +224,7 @@
  <!-- / .main-content -->
 @endsection
 @section('content-form')
-    {{-- @include('product::form.product') --}}
+    @include('backend.bukutamu.form.guest')
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
@@ -231,14 +232,14 @@
     $(document).ready(function() {
 
         //set webcam
-        Webcam.set({
-            width: 280,
-            height: 280,
-            image_format: 'jpeg',
-            jpeg_quality: 90
-        });
+        // Webcam.set({
+        //     width: 280,
+        //     height: 280,
+        //     image_format: 'jpeg',
+        //     jpeg_quality: 90
+        // });
 
-        Webcam.attach('#my_camera');
+        // Webcam.attach('#my_camera');
 
         var options = {
             valueNames: [ 'table-name','table-product' ],
