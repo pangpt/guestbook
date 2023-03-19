@@ -70,10 +70,10 @@
                                 <label class="col-form-label col-1">Category</label>
 
                                 <div class="col-5">
-                                    <select class="form-control type" name="categories_id" id="filter_categories" data-toggle="select">
+                                    <select class="form-control type" name="category_id" id="filter_categories" data-toggle="select">
                                         <option selected='selected' value="0">General</option>
                                         @foreach ($categories as $cat)
-                                            <option value="{{$cat->id}}" {{ @Request::get('categories_id') == $cat->id ? 'selected' : '' }}>{{$cat->name}}</option>
+                                            <option value="{{$cat->id}}" {{ @Request::get('category_id') == $cat->id ? 'selected' : '' }}>{{$cat->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -14,15 +14,15 @@ class GuestController extends Controller
         $title = 'Buku Tamu';
 
         $category = Category::all();
-        $guest = Guest::get();
+        $guest = Guest::where('id', '!=', 0);
 
-        if($request->categories_id){
-            if($request->categories_id != 0){
-                $guest->where('category_id',$request->categories_id);
+        if($request->category_id){
+            if($request->category_id != 0){
+                $guest->where('category_id',$request->category_id);
             }
         }
         
-
+        $guest= $guest->get();
         return view('backend.bukutamu.index', [
             'categories' => $category
         ])->withTitle($title)->withGuest($guest)->withSection('Register');
