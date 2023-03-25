@@ -51,7 +51,7 @@
 
                         <!-- Title -->
                         <h6 class="card-title text-uppercase text-muted mb-10">
-                            Total Transaction
+                            Jumlah Tamu per Hari ini
                         </h6>
                         
                         <!-- Heading -->

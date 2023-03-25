@@ -186,7 +186,7 @@
                                     {{ $item->tujuan_kunjungan }}
                                 </td>
                                 <td class="table-category" style="vertical-align:middle">
-                                    {{ $item->category->name }}
+                                    {{ @$item->category->name }}
                                 </td>
                                 <td class="text-right" style="vertical-align:middle">
                                         <div class="dropdown">

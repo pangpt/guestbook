@@ -24,7 +24,6 @@
     <link rel="shortcut icon" href="/images/icon-lapaku.png" type="image/x-icon">
 
     <title>LAPAK-KU</title>
-    @laravelPWA
   </head>
   <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 
