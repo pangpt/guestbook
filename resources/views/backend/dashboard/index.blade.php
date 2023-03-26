@@ -56,7 +56,7 @@
                         
                         <!-- Heading -->
                         <span class="h1 mb-0">
-                        2                        
+                        {{@number_format($total)}}                       
                         </span>
 
                         <!-- Badge -->
@@ -72,7 +72,13 @@
                         <div class="col-12">
                             <hr>
                             <span class="text-muted">
-                                <b class="text-success">+5%</b> from yesterday
+                                @if($percenttotal == 0)
+                                No data from yesterday
+                                @elseif($percenttotal < 0)
+                                <b class="text-danger">{{ $percenttotal }}%</b> from yesterday
+                            @else 
+                                <b class="text-success">+{{ $percenttotal }}%</b> from yesterday
+                            @endif
                             
                             </span>
                         </div>
