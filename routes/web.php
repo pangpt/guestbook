@@ -16,10 +16,12 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [LoginController::class, 'index'])->name('loginpage');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/login/authenticate', [LoginController::class, 'authenticateadmin'])->name('admin.authenticate');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::post('/admin/logout', [LoginController::class, 'logout'])->name('adminlogout');
 
-Route::prefix('admin')->group(function() {
+Route::middleware(['auth'])->prefix('admin')->group(function() {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('admin.dashboard');
     Route::get('/bukutamu', [GuestController::class, 'index'])->name('guest.index');
     Route::post('/bukutamu/store', [GuestController::class, 'store'])->name('guest.store');

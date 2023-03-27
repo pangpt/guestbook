@@ -14,12 +14,20 @@ class LoginController extends Controller
         return view('loginpage');
     }
 
+    public function logout(Request $request)
+    {
+        //cek
+        $url = '/';
+        Auth::logout();
+        return redirect($url);
+    }
+
     public function authenticateadmin(Request $request)
     {
         if (Auth::validate(['username'=>$request->username,'password'=>$request->password])) {
             $cekuser = User::where('username',$request->username)->first();
             if($cekuser->role=='admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->intended('/admin/dashboard');
             } else {
                 Auth::attemp(['username'=>$request->username,'password'=>$request->password]);
                 return redirect()->route('dashboard.index');

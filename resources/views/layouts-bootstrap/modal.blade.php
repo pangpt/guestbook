@@ -452,10 +452,10 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <button class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-                            <form id="logout-form" action="#" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{route('adminlogout')}}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
-                                <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><button type="button" class="btn btn-danger waves-effect waves-light">Logout</button></a>
+                                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><button type="button" class="btn btn-danger waves-effect waves-light">Logout</button></a>
                         </div>
                     </div>
                 </div>

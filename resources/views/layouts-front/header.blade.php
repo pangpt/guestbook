@@ -22,7 +22,7 @@
                                 <li><a href="{{route('logout')}}" data-lng="es">Logout</a></li>
 
                                 @else
-                                <li><a href="{{ route('loginpage') }}" data-lng="en">Login</a></li>
+                                <li><a href="{{ route('login') }}" data-lng="en">Login</a></li>
                                 @endif
                             </ul>
                         </li>
