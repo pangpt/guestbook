@@ -232,14 +232,14 @@
     $(document).ready(function() {
 
         //set webcam
-        // Webcam.set({
-        //     width: 280,
-        //     height: 280,
-        //     image_format: 'jpeg',
-        //     jpeg_quality: 90
-        // });
+        Webcam.set({
+            width: 280,
+            height: 280,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
 
-        // Webcam.attach('#my_camera');
+        Webcam.attach('#my_camera');
 
         var options = {
             valueNames: [ 'table-name','table-product' ],

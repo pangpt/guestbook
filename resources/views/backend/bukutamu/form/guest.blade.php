@@ -2,15 +2,18 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="fotoimage" class="control-label">Foto :</label>
-          
+                <div id="my_camera"></div>
             </div>
-            <div id="my_camera"></div>
+            
 
-  <br>
-
-  <input type="button" value="Capture" onclick="take_snapshot()">
-  <input type="button" value="Reset" onclick="reset_camera()">
-            <div class="col-md-5 text-left">
+            <br>
+            <div class="col-md-7 text-left">
+{{-- <input type="button" value="Capture" onclick="take_snapshot()"> --}}
+            <input type="button" value="Capture" onclick="take_snapshot()" class="btn btn-sm btn-secondary btn-block" style="margin-bottom:4px">
+            <input type="button" value="Reset" onclick="reset_camera()" class="btn btn-sm btn-danger btn-block" style="margin-bottom:10px">
+            </div>
+            
+            {{-- <div class="col-md-5 text-left">
                 <div class="form-group">
                     <img class="rounded" alt="200x200" id="fotoimage" width="100%" src="{{ asset('images/default-user.png') }}" data-holder-rendered="true">
                 </div>
@@ -22,7 +25,7 @@
                     <button id="uploadfoto" type="button" class="btn btn-sm btn-secondary btn-block" style="margin-bottom:10px">Ambil Foto</button>
                     <button id="resetfoto" type="button" class="btn btn-sm btn-danger btn-block" >Reset Image</button>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Nama :</label>

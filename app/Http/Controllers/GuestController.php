@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Guest;
+use Illuminate\Support\Facades\Storage;
 
 class GuestController extends Controller
 {
@@ -30,10 +31,12 @@ class GuestController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->foto_tamu);
         $guest = new Guest;
         $guest->nama = $request->nama;
         $guest->jenis_kelamin = $request->jenis_kelamin;
         $guest->tujuan_kunjungan = $request->tujuan_kunjungan;
+        $guest->instansi = $request->instansi;
         $guest->category_id = $request->category_id;
         $guest->catatan = $request->catatan;
         $guest->waktu_kunjungan = \Carbon\Carbon::now()->toDateTimeString();$request->catatan;
