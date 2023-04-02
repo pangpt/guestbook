@@ -17,25 +17,40 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         //cek
-        $url = '/';
+        $url = '/login';
         Auth::logout();
         return redirect($url);
     }
 
-    public function authenticateadmin(Request $request)
-    {
-        if (Auth::validate(['username'=>$request->username,'password'=>$request->password])) {
-            $cekuser = User::where('username',$request->username)->first();
-            if($cekuser->role=='admin') {
-                return redirect()->intended('/admin/dashboard');
-            } else {
-                Auth::attemp(['username'=>$request->username,'password'=>$request->password]);
-                return redirect()->route('dashboard.index');
-            }
+    public function login(Request $request) {
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required|min:5',
+        ]);
+
+        $username = $request->username;
+        $password = $request->password;
+
+        if(Auth::attempt(['username' => $username, 'password' => $password])) {
+            return redirect()->intended('/admin/dashboard');
         } else {
-            return redirect()->back()->withErrors([
-                'error' => 'Username atau password salah!'
-            ])->withInput();
+            return redirect()->back()->with('error', 'Username atau password tidak sesuai');
         }
     }
+    // public function authenticateadmin(Request $request)
+    // {
+    //     if (Auth::validate(['username'=>$request->username,'password'=>$request->password])) {
+    //         $cekuser = User::where('username',$request->username)->first();
+    //         if($cekuser->role=='admin') {
+    //             return redirect()->intended('/admin/dashboard');
+    //         } else {
+    //             Auth::attemp(['username'=>$request->username,'password'=>$request->password]);
+    //             return redirect()->route('dashboard.index');
+    //         }
+    //     } else {
+    //         return redirect()->back()->withErrors([
+    //             'error' => 'Username atau password salah!'
+    //         ])->withInput();
+    //     }
+    // }
 }

@@ -17,11 +17,11 @@ use App\Http\Controllers\DashboardController;
 |
 */
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('admin/login/authenticate', [LoginController::class, 'authenticateadmin'])->name('admin.authenticate');
+Route::post('admin/login/authenticate', [LoginController::class, 'login'])->name('admin.authenticate');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('adminlogout');
 
-Route::middleware(['auth'])->prefix('admin')->group(function() {
+Route::middleware(['ceklogin'])->prefix('admin')->group(function() {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('admin.dashboard');
     Route::get('/bukutamu', [GuestController::class, 'index'])->name('guest.index');
     Route::post('/bukutamu/store', [GuestController::class, 'store'])->name('guest.store');

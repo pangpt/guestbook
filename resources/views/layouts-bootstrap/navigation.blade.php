@@ -58,15 +58,15 @@
               <ul class="navbar-nav">
                   
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a class="nav-link {{Request::segment(2) == 'dashboard' ? 'active' : ''}}" href="{{route('admin.dashboard')}}">
                         <i class="fe fe-grid"></i> Dashboard
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link">
                     <i class="fe fe-file-text"></i> Report
                   </a>
-                </li>
+                </li> --}}
               </ul>
 
               <hr class="navbar-divider my-3">
@@ -79,8 +79,13 @@
               <!-- Navigation -->
               <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a class="nav-link {{Request::segment(2) == 'bukutamu' ? 'active' : ''}}" href="{{route('guest.index')}}">
                             <i class="fe fe-archive"></i> Buku Tamu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{Request::segment(2) == 'kategori' ? 'active' : ''}}" href="{{route('category.index')}}">
+                            <i class="fe fe-layers"></i> Kategori
                         </a>
                     </li>
 
@@ -104,11 +109,7 @@
                           <i class="fe fe-home"></i> Pengaturan
                       </a>
                   </li>
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <i class="fe fe-layers"></i> Category
-                        </a>
-                    </li>
+                    
               </ul>
               <hr class="navbar-divider my-3">
 
