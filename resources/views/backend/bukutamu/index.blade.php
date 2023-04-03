@@ -125,12 +125,12 @@
                         <thead>
                         <tr>
                             <th style="width:5%">
-                            <div class="custom-control custom-checkbox table-checkbox">
+                            {{-- <div class="custom-control custom-checkbox table-checkbox">
                                 <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelectAll">
                                 <label class="custom-control-label" for="ordersSelectAll">
                                 &nbsp;
                                 </label>
-                            </div>
+                            </div> --}}
                             </th>
                             <th colspan="2">
                             <a href="#" class="text-muted sort" data-sort="table-product">
@@ -162,13 +162,8 @@
                         <tbody class="list">
                             @foreach ($guest as $item)
                             <tr >
-                                <td style="vertical-align:middle">
-                                        <div class="custom-control custom-checkbox table-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelectOne">
-                                            <label class="custom-control-label" for="ordersSelectOne">
-                                            &nbsp;
-                                            </label>
-                                        </div>
+                                <td class="text-left" style="width:20%;">
+                                    <img style="width:100px" src="{{ asset('storage/'.$item->foto_tamu )}}">
                                 </td>
                                 <td class="text-left" style="width:5%;vertical-align:middle">
                                     
@@ -330,10 +325,14 @@
 
         function take_snapshot() {
             Webcam.snap(function(data_uri) {
-                var image_data = data_uri.replace(/^data:image\/jpeg;base64,/, '');
-                console.log(image_data);
-                document.getElementById('my_camera').innerHTML = '<img src="' + data_uri + '"/>';
-                document.getElementById('foto_tamu').value = image_data;
+                $(".image-tag").val(data_uri);
+                console.log(data_uri)
+                document.getElementById('my_camera').innerHTML = '<img src="'+data_uri+'"/>';
+                // console.log(data_uri)
+                // var image_data = data_uri.replace(/^data:image\/jpeg;base64,/, '');
+                // console.log(image_data);
+                // document.getElementById('my_camera').innerHTML = '<img src="' + data_uri + '"/>';
+                // document.getElementById('foto_tamu').value = image_data;
             });
         }
 

@@ -11,6 +11,7 @@
 {{-- <input type="button" value="Capture" onclick="take_snapshot()"> --}}
             <input type="button" value="Capture" onclick="take_snapshot()" class="btn btn-sm btn-secondary btn-block" style="margin-bottom:4px">
             <input type="button" value="Reset" onclick="reset_camera()" class="btn btn-sm btn-danger btn-block" style="margin-bottom:10px">
+            <input type="hidden" name="foto_tamu" class="image-tag">
             </div>
             
             {{-- <div class="col-md-5 text-left">
