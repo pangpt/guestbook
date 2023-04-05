@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="/assets-bootstrap/css/theme.min.css">
 
     <style>body { display: none; }</style>
-    <link rel="icon" href="/images/icon-lapaku.png" type="image/x-icon">
-    <link rel="shortcut icon" href="/images/icon-lapaku.png" type="image/x-icon">
+    <link rel="icon" href="/images/icon-gbook.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/icon-gbook.png" type="image/x-icon">
 
     <title>LAPAK-KU</title>
   </head>

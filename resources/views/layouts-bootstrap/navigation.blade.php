@@ -10,7 +10,7 @@
 
             <!-- Brand -->
             <a class="navbar-brand" href="index.html">
-              <img src="/images/icon-lapaku.png" class="navbar-brand-img 
+              <img src="/images/icon-gbook.png" class="navbar-brand-img 
               mx-auto" alt="...">
             </a>
 

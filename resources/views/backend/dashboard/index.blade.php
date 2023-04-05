@@ -69,7 +69,7 @@
                         <span class="h1 fe fe-clipboard text-muted mb-0"></span>
 
                         </div>
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <hr>
                             <span class="text-muted">
                                 @if($percenttotal == 0)
@@ -81,7 +81,7 @@
                             @endif
                             
                             </span>
-                        </div>
+                        </div> --}}
                     </div> <!-- / .row -->
                     
                     </div>
@@ -98,7 +98,7 @@
 
                         <!-- Title -->
                         <h6 class="card-title text-uppercase text-muted mb-10">
-                            Total Cash In
+                            Jumlah Tamu Bulan ini
                         </h6>
                         
                         <!-- Heading -->
@@ -118,13 +118,6 @@
                         <span class="h1 fe fe-arrow-down-left text-muted mb-0"></span>
 
                         </div>
-                        <div class="col-12">
-                            <hr>
-                            <span class="text-muted">
-
-                                <b class="text-success">+10%</b> from yesterday
-                            </span>
-                        </div>
                     </div> <!-- / .row -->
 
                     </div>
@@ -141,7 +134,7 @@
 
                         <!-- Title -->
                         <h6 class="card-title text-uppercase text-muted mb-10">
-                            Total Cash Out
+                            Jumlah Pengunjung dari Mahkamah Agung
                         </h6>
                         
                         <!-- Heading -->
@@ -160,14 +153,6 @@
                         <!-- Icon -->
                         <span class="h1 fe fe-arrow-up-right text-muted mb-0"></span>
 
-                        </div>
-                        <div class="col-12">
-                            <hr>
-                            <span class="text-muted">
-
-                                <b class="text-success">+0%</b> from yesterday
-                            
-                            </span>
                         </div>
                     </div> <!-- / .row -->
 

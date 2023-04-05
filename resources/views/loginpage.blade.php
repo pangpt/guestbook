@@ -8,12 +8,12 @@
         <div class="col-12 col-md-5 col-xl-4 my-5">
                         <!-- Heading -->
                         <div class="text-center">
-                          <img src="/images/logo-lapaku.png" alt="..." class="img-fluid text-center" style="width:80%;margin-bottom:50px">
+                          <img src="/images/logo-gbook.png" alt="..." class="img-fluid text-center" style="width:100%;margin-bottom:20px">
                       </div>
                       
                       <!-- Subheading -->
                       <p class="text-muted text-center mb-5">
-                        Kelola buku tamu di e-Guest
+                        Kelola buku tamu 
                       </p>
       
                       <!-- Error -->

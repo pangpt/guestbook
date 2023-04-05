@@ -63,7 +63,7 @@ class GuestController extends Controller
         $guest->instansi = $request->instansi;
         $guest->category_id = $request->category_id;
         $guest->catatan = $request->catatan;
-        $guest->waktu_kunjungan = \Carbon\Carbon::now()->toDateTimeString();$request->catatan;
+        $guest->waktu_kunjungan = \Carbon\Carbon::now()->toDateTimeString();
         $guest->tanggal_kunjungan = $request->tanggal_kunjungan;
         $guest->kategori = 'cek';
 
@@ -72,5 +72,54 @@ class GuestController extends Controller
         $guest->save();
 
         return redirect()->back()->withErrors(['success' => 'Berhasil menambahkan data !']);
+    }
+
+    public function edit($id, Request $request)
+    {
+        $data = Guest::where('id', $id)->first();
+
+        return json_encode($data);
+    }
+
+    public function update($id, Request $request)
+    {
+        $guest = Guest::findOrFail($id);
+
+        $guest->nama = $request->nama;
+        $guest->jenis_kelamin = $request->jenis_kelamin;
+        $guest->tujuan_kunjungan = $request->tujuan_kunjungan;
+        // $guest->foto_tamu = $folderPath . $fileName;
+        $guest->instansi = $request->instansi;
+        $guest->category_id = $request->category_id;
+        $guest->catatan = $request->catatan;
+        $guest->waktu_kunjungan = \Carbon\Carbon::now()->toDateTimeString();
+        $guest->tanggal_kunjungan = $request->tanggal_kunjungan;
+        $guest->kategori = 'cek';
+
+        // dd($guest);
+
+        $guest->update();
+
+        return redirect()->back()->withErrors([
+            'success' => 'Data berhasil diubah!'
+        ]);
+            
+    }
+
+    public function destroy($id, Request $request)
+    {
+        $guest = Guest::where('id', $id);
+
+        if(!$guest->delete()){
+            return redirect()->back()->withErrors([
+                'error' => 'Gagal hapus data!'
+            ]);
+        } else{
+            return redirect()->back()->withErrors([
+                'success' => 'Berhasil hapus data!'
+            ]);
+        }
+
+        return json_encode($data);
     }
 }

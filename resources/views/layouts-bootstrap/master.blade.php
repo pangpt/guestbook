@@ -21,8 +21,8 @@
 
     @yield('css')
 
-    <link rel="icon" href="/images/icon-lapaku.png" type="image/x-icon">
-    <link rel="shortcut icon" href="/images/icon-lapaku.png" type="image/x-icon">
+    <link rel="icon" href="/images/icon-gbook.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/icon-gbook.png" type="image/x-icon">
     <meta name="csrf-token" conten="{{ csrf_token() }}" />
     <title>e-GUEST</title>
 

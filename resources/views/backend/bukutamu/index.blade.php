@@ -132,7 +132,7 @@
                                 </label>
                             </div> --}}
                             </th>
-                            <th colspan="2">
+                            <th>
                             <a href="#" class="text-muted sort" data-sort="table-product">
                                 Tanggal
                             </a>
@@ -165,9 +165,9 @@
                                 <td class="text-left" style="width:20%;">
                                     <img style="width:100px" src="{{ asset('storage/'.$item->foto_tamu )}}">
                                 </td>
-                                <td class="text-left" style="width:5%;vertical-align:middle">
+                                {{-- <td class="text-left" style="width:5%;vertical-align:middle">
                                     
-                                </td>
+                                </td> --}}
                                 <td class="table-product text-left" style="vertical-align:middle">
                                     {{ $item->tanggal_kunjungan }}
                                 </td>
@@ -189,10 +189,10 @@
                                             <i class="fe fe-more-vertical"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="#!" data-url="#" data-id="" data-toggle="modal" data-target="#datamodal" class="dropdown-item edit">
+                                            <a href="#!" data-url="{{route('guest.update', ['id' => $item->id])}}" data-id="{{$item->id}}" data-toggle="modal" data-target="#datamodal" class="dropdown-item edit">
                                                 Edit
                                             </a>
-                                            <a href="#!" data-url="#" data-id="" data-toggle="modal" data-target="#deletemodal" class="dropdown-item delete">
+                                            <a href="#!" data-url="{{route('guest.destroy', ['id' => $item->id])}}" data-id="{{$item->id}}" data-toggle="modal" data-target="#deletemodal" class="dropdown-item delete">
                                                 Delete
                                             </a>
                                             </div>
@@ -286,6 +286,7 @@
             $('#is_deliverable').attr('checked',false);
             $("#fotoimage").attr('src', baseURL+'/images/default.jpg');
         })
+
         $('.edit').on('click',function(){
             id = $(this).data('id');
             url = $(this).data('url');
@@ -296,18 +297,19 @@
             $('#is_deliverable').attr('checked',false);
             $("#fotoimage").attr('src', baseURL+'/images/default.jpg');
             $.ajax({
-				url: baseURL+"/admin/product/edit/"+id,
+				url: baseURL+"/admin/bukutamu/edit/"+id,
 				type: "GET",
 				dataType: "JSON",
 				success : function(data){
-                    $('#product_name').val(data.product_name);
-                    $('#product_description').val(data.product_description);
-                    $('#categories_id').val(data.categories_id);
-                    $('#outlet_id').val(data.outlet_id);
-                    $('#base_price').val(data.base_price);
-                    $('#final_price').val(data.final_price);
-                    $('#point').val(data.point);
-                    $("#fotoimage").attr('src', baseURL+'/images/'+data.image);
+                    $('#nama').val(data.nama);
+                    $('#tujuan_kunjungan').val(data.tujuan_kunjungan);
+                    $('#category_id').val(data.category_id);
+                    $('#instansi').val(data.instansi);
+                    $('#catatan').val(data.catatan);
+                    $('#tanggal_kunjungan').val(data.tanggal_kunjungan);
+                    $('#jenis_kelamin').val(data.jenis_kelamin);
+                    $("#my_camera").attr('src', baseURL+'/uploads/'+data.foto_tamu);
+                    // console.log(data.foto_tamu)
                     if(data.is_deliverable == 1){
                         $('#is_deliverable').attr('checked',true);
                     }else{
@@ -316,6 +318,7 @@
 				}
 			});
         })
+
         $('.delete').on('click',function(){
             id = $(this).data('id');
             url = $(this).data('url');

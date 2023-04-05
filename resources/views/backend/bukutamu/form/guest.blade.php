@@ -14,29 +14,16 @@
             <input type="hidden" name="foto_tamu" class="image-tag">
             </div>
             
-            {{-- <div class="col-md-5 text-left">
-                <div class="form-group">
-                    <img class="rounded" alt="200x200" id="fotoimage" width="100%" src="{{ asset('images/default-user.png') }}" data-holder-rendered="true">
-                </div>
-                <input type="hidden" name="resetfoto" id="valueresetfoto">
-            </div>
-            <div class="col-md-7 text-left">
-                <div class="form-group">
-                    <input type="file" class="form-control" name="foto" id="foto" accept=".jpg, .png, .jpeg" style="display:none">
-                    <button id="uploadfoto" type="button" class="btn btn-sm btn-secondary btn-block" style="margin-bottom:10px">Ambil Foto</button>
-                    <button id="resetfoto" type="button" class="btn btn-sm btn-danger btn-block" >Reset Image</button>
-                </div>
-            </div> --}}
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Nama :</label>
-                    <input type="text" name="nama" id="product_name" class="form-control" required>
+                    <input type="text" name="nama" id="nama" class="form-control" required>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Jenis Kelamin :</label>
-                    <select class="form-control" name="jenis_kelamin" id="categories_id" required>
+                    <select class="form-control" name="jenis_kelamin" id="jenis_kelamin" required>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Wanita">Wanita</option>
                     </select>
@@ -45,13 +32,13 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Tujuan :</label>
-                    <textarea type="text" name="tujuan_kunjungan" id="product_description" class="form-control" required></textarea>
+                    <textarea type="text" name="tujuan_kunjungan" id="tujuan_kunjungan" class="form-control" required></textarea>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Asal/Instansi :</label>
-                    <input type="text" name="instansi" id="product_name" class="form-control" required>
+                    <input type="text" name="instansi" id="instansi" class="form-control" required>
                 </div>
             </div>
             <div class="col-md-12">
@@ -67,7 +54,7 @@
             <div class="col-md-12">
                     <div class="form-group">
                         <label for="base" class="control-label">Tanggal Kunjungan :</label>
-                        <input class="form-control" data-toggle="flatpickr" id="filter_date" name="tanggal_kunjungan" value="{{ empty(Request::get('date')) ? date('Y-m-d',strtotime('now')) : Request::get('date')  }}">
+                        <input class="form-control" data-toggle="flatpickr" id="tanggal_kunjungan" name="tanggal_kunjungan" value="{{ empty(Request::get('date')) ? date('Y-m-d',strtotime('now')) : Request::get('date')  }}">
 
                     </div>
             </div>
@@ -80,7 +67,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nama" class="control-label">Catatan :</label>
-                    <textarea type="text" name="catatan" id="product_description" class="form-control"></textarea>
+                    <textarea type="text" name="catatan" id="catatan" class="form-control"></textarea>
                 </div>
             </div>
         </div>
