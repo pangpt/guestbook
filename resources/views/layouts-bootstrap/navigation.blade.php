@@ -105,7 +105,7 @@
               </h6>
               <ul class="navbar-nav ">
                   <li class="nav-item ">
-                      <a class="nav-link">
+                      <a class="nav-link {{Request::segment(2) == 'office' ? 'active' : ''}}" href="{{route('office.index')}}">
                           <i class="fe fe-home"></i> Pengaturan
                       </a>
                   </li>
