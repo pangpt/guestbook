@@ -103,7 +103,7 @@
                         
                         <!-- Heading -->
                         <span class="h1 mb-0">
-                            IDR 20,000
+                            {{@number_format($totalMonth)}}   
                         </span>
 
                         <!-- Badge -->
@@ -139,7 +139,7 @@
                         
                         <!-- Heading -->
                         <span class="h1 mb-0">
-                        IDR 3000
+                        {{@number_format($guestMa)}} 
                         </span>
 
                         <!-- Badge -->

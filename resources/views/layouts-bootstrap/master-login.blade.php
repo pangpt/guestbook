@@ -23,7 +23,7 @@
     <link rel="icon" href="/images/icon-gbook.png" type="image/x-icon">
     <link rel="shortcut icon" href="/images/icon-gbook.png" type="image/x-icon">
 
-    <title>LAPAK-KU</title>
+    <title>GUEST-BOOK</title>
   </head>
   <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 

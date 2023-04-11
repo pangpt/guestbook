@@ -32,7 +32,7 @@
                         <div class="form-group">
             
                           <!-- Label -->
-                          <label>NIP/Username</label>
+                          <label>Username</label>
             
                           <!-- Input -->
                         <input type="text" name="username" class="form-control" placeholder="Isikan dengan NIP atau Username" value="{{ old('username') }}" required>
