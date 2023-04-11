@@ -6,6 +6,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OfficeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,6 @@ Route::middleware(['ceklogin'])->prefix('admin')->group(function() {
 
     Route::get('/office/general', [OfficeController::class, 'index'])->name('office.index');
     Route::post('/office/update', [OfficeController::class, 'editOffice'])->name('office.update');
+
+    Route::get('/user', [UserController::class,'index'])->name('user.index');
 });

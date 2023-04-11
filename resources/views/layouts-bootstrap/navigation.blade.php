@@ -119,7 +119,7 @@
               </h6>
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link">
+                  <a class="nav-link {{Request::segment(2) == 'user' ? 'active' : ''}}" href="{{route('user.index')}}">
                       <i class="fe fe-users "></i> Staff
                   </a>
               </li>
