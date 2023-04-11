@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OfficeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,7 @@ Route::middleware(['ceklogin'])->prefix('admin')->group(function() {
 
     Route::get('/kategori',[CategoryController::class, 'index'])->name('category.index');
     Route::post('/kategori/store',[CategoryController::class, 'store'])->name('category.store');
+
+    Route::get('/office/general', [OfficeController::class, 'index'])->name('office.index');
+    Route::post('/office/update', [OfficeController::class, 'editOffice'])->name('office.update');
 });
