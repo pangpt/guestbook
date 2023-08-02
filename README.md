@@ -1,7 +1,7 @@
 Petunjuk Penggunaan Aplikasi Buku Tamu Digital di Pengadilan Agama Watampone:
 
 Langkah 1: Akses Aplikasi
-Buka aplikasi Buku Tamu Digital yang telah diinstal di perangkat Anda atau kunjungi situs web resmi Pengadilan Agama Watampone.
+Buka aplikasi Buku Tamu Digital menggunakan browser Chrome di https://bukutamu.pa-watampone.go.id/login
 
 Langkah 2: Pendaftaran Pengunjung
 Klik tombol menu "Buku Tamu" dan isi formulir pendaftaran dengan informasi pribadi Anda, termasuk nama lengkap, alamat, dan nomor identifikasi. Pastikan mengisi informasi dengan benar.
